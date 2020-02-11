@@ -12,20 +12,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:text="Task description"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintBottom_toTopOf="@+id/taskDescription"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/taskDescription"
         android:layout_width="330dp"
         android:layout_height="62dp"
         android:layout_marginTop="80dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Do Something"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/taskTitle" />
 
     <TextView
         android:id="@+id/textView2"
@@ -41,36 +40,35 @@
         app:layout_constraintVertical_bias="0.156" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/taskTitle"
         android:layout_width="330dp"
         android:layout_height="62dp"
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="My Task"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/addATask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="44dp"
         android:text="Add Task"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/taskDescription" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/totalTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="88dp"
         android:text="Total Task: 0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/addATask" />
 
     <TextView
         android:id="@+id/textView4"
@@ -78,6 +76,20 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:text="Task title"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintBottom_toTopOf="@+id/taskTitle"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/submitted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Submitted!"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/totalTask"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addATask"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
