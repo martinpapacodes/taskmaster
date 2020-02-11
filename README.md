@@ -18,7 +18,15 @@ Today, you’ll start building an Android app that will be a main focus of the s
     
 * All Tasks
 
-    * The all tasks page should just be an image with a back button; it needs no functionality.   
+    * The all tasks page should just be an image with a back button; it needs no functionality. 
+      
+##### Daily Change Log
 
+* Added homepage, task page, and all tasks page
+* When user clicked on clicks on add task button, the app prompts, "Submitted."
+
+###### Screenshot
 
 ![image description](screenshots/homePage.png)
+
+
