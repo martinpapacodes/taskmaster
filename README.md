@@ -27,6 +27,41 @@ Today, you’ll start building an Android app that will be a main focus of the s
 
 ###### Screenshot
 
-![image description](screenshots/homePage.png)
+![homepage](screenshots/homePage.png)
+
+## Lab 27: Adding Data to TaskMaster
+
+### Feature Tasks
+
+* Task Detail Page
+
+    * Create a Task Detail page. It should have a title at the top of the page, and a Lorem Ipsum description.
+    
+* Settings Page
+
+    * Create a Settings page. It should allow users to enter their username and hit save.
+    
+*  Homepage
+
+    * The main page should be modified to contain three different buttons with hardcoded task titles. When a user taps one of the titles, it should go to the Task Detail page, and the title at the top of the page should match the task title that was tapped on the previous page.
+      
+      The homepage should also contain a button to visit the Settings page, and once the user has entered their username, it should display “{username}’s tasks” above the three task buttons.
+
+#### Problem Domain
+
+Today, you’ll add the ability to send data among different activities in your application using SharedPreferences and Intents.
 
 
+      
+##### Daily Change Log
+
+* Added settings page. User now is able to type in their username on the setting page and display the username back to the homepage on top of the task buttons.
+* Replaced the image with hardcoded task buttons. When one of the buttons is clicked, the app will take you to the task detail's page.
+
+##### New Homepage
+![new home page](screenshots/newHomePage.png)
+
+
+##### Task Details Page
+
+![task details page](screenshots/taskDetailPage.png)
