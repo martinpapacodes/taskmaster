@@ -40,6 +40,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        final Button walkDog = findViewById(R.id.walkDogButton);
+        walkDog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToTaskDetailsPage = new Intent(MainActivity.this, taskDetail.class);
+                goToTaskDetailsPage.putExtra("taskDetail", "Walk The Effin Dog");
+                Log.d(TAG, walkDog.getText().toString());
+
+                MainActivity.this.startActivity(goToTaskDetailsPage);
+            }
+        });
+
+
+        final Button feedDog = findViewById(R.id.feedDogButton);
+        feedDog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToTaskDetailsPage = new Intent(MainActivity.this, taskDetail.class);
+                goToTaskDetailsPage.putExtra("taskDetail", feedDog.getText().toString());
+                Log.d(TAG, feedDog.getText().toString());
+
+                MainActivity.this.startActivity(goToTaskDetailsPage);
+            }
+        });
+
+        final Button petDog = findViewById(R.id.petDogButton);
+        petDog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToTaskDetailsPage = new Intent(MainActivity.this, taskDetail.class);
+                goToTaskDetailsPage.putExtra("taskDetail", petDog.getText().toString());
+                Log.d(TAG, petDog.getText().toString());
+
+                MainActivity.this.startActivity(goToTaskDetailsPage);
+            }
+        });
+
 
     }
 
