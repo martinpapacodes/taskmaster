@@ -26,8 +26,11 @@ Today, you’ll start building an Android app that will be a main focus of the s
 * When user clicked on clicks on add task button, the app prompts, "Submitted."
 
 ###### Screenshot
+###### Homepage
+![homepage](screenshots/homePage.png =300x500)
 
-![homepage](screenshots/homePage.png)
+###### Add Task Page
+![add task](screenshots/addTask.png =300x500)
 
 ## Lab 27: Adding Data to TaskMaster
 
@@ -59,9 +62,9 @@ Today, you’ll add the ability to send data among different activities in your 
 * Replaced the image with hardcoded task buttons. When one of the buttons is clicked, the app will take you to the task detail's page.
 
 ##### New Homepage
-![new home page](screenshots/newHomePage.png)
+![new home page](screenshots/newHomePage.png =300x500)
 
 
 ##### Task Details Page
 
-![task details page](screenshots/taskDetailPage.png)
+![task details page](screenshots/taskDetailPage.png =300x500)
