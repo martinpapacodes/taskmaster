@@ -29,6 +29,10 @@ Today, you’ll start building an Android app that will be a main focus of the s
 ###### Homepage
 ![homepage](screenshots/homePage.png =300x500)
 
+<img src="screenshots/homePage.png width="300" height="500">
+
+
+
 ###### Add Task Page
 ![add task](screenshots/addTask.png =300x500)
 
