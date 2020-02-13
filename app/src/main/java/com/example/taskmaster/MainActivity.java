@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MyTaskRecyclerViewAdapter.OnTaskListener {
 
     static String TAG = "mnf.main";
 
@@ -40,42 +40,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button walkDog = findViewById(R.id.walkDogButton);
-        walkDog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goToTaskDetailsPage = new Intent(MainActivity.this, taskDetail.class);
-                goToTaskDetailsPage.putExtra("taskDetail", "Walk The Effin Dog");
-                Log.d(TAG, walkDog.getText().toString());
-
-                MainActivity.this.startActivity(goToTaskDetailsPage);
-            }
-        });
-
-
-        final Button feedDog = findViewById(R.id.feedDogButton);
-        feedDog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goToTaskDetailsPage = new Intent(MainActivity.this, taskDetail.class);
-                goToTaskDetailsPage.putExtra("taskDetail", feedDog.getText().toString());
-                Log.d(TAG, feedDog.getText().toString());
-
-                MainActivity.this.startActivity(goToTaskDetailsPage);
-            }
-        });
-
-        final Button petDog = findViewById(R.id.petDogButton);
-        petDog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goToTaskDetailsPage = new Intent(MainActivity.this, taskDetail.class);
-                goToTaskDetailsPage.putExtra("taskDetail", petDog.getText().toString());
-                Log.d(TAG, petDog.getText().toString());
-
-                MainActivity.this.startActivity(goToTaskDetailsPage);
-            }
-        });
         // ViewAdapter has the job of telling the RecyclerView what to display at each row
         Button allTaskButton = findViewById(R.id.allTasksButton);
         allTaskButton.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onTaskClick(Task task) {
+        Intent takeMeToTaskDetail = new Intent(this, taskDetail.class);
 
-
+        startActivity(takeMeToTaskDetail);
+    }
 }
