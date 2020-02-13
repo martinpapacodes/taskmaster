@@ -76,6 +76,15 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.startActivity(goToTaskDetailsPage);
             }
         });
+        // ViewAdapter has the job of telling the RecyclerView what to display at each row
+        Button allTaskButton = findViewById(R.id.allTasksButton);
+        allTaskButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToAllTasksPage = new Intent(MainActivity.this, allTasks.class);
+                startActivity(goToAllTasksPage);
+            }
+        });
 
 
     }
