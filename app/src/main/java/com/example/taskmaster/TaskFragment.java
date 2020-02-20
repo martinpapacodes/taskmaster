@@ -15,6 +15,9 @@ import android.view.ViewGroup;
 import com.example.taskmaster.dummy.DummyContent;
 import com.example.taskmaster.dummy.DummyContent.DummyItem;
 
+
+import java.util.ArrayList;
+
 import java.util.List;
 
 /**
@@ -71,7 +74,14 @@ public class TaskFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyTaskRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+
+            List<Task> listOfTask = new ArrayList<>();
+            listOfTask.add(new Task("Feed Dog", "Feed Biggie around 4pm", "Assigned"));
+            listOfTask.add(new Task("Walk Dog", "Walk Biggie to the dog park", "Completed"));
+            listOfTask.add(new Task("Pet Dog", "Pet Biggie every time you see him", "In-Progress"));
+
+            recyclerView.setAdapter(new MyTaskRecyclerViewAdapter(listOfTask, null));
+
         }
         return view;
     }
@@ -83,8 +93,9 @@ public class TaskFragment extends Fragment {
         if (context instanceof OnListFragmentInteractionListener) {
             mListener = (OnListFragmentInteractionListener) context;
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnListFragmentInteractionListener");
+//            throw new RuntimeException(context.toString()
+//                    + " must implement OnListFragmentInteractionListener");
+
         }
     }
 

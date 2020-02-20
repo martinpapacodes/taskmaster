@@ -2,6 +2,11 @@ package com.example.taskmaster;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +24,12 @@ import java.util.List;
  */
 public class MyTaskRecyclerViewAdapter extends RecyclerView.Adapter<MyTaskRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
-    private final OnListFragmentInteractionListener mListener;
+    static final String TAG = "martipapa.ViewAdapter";
 
-    public MyTaskRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    private final List<Task> mValues;
+    private final OnTaskListener mListener;
+
+    public MyTaskRecyclerViewAdapter(List<Task> items, OnTaskListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -37,17 +44,27 @@ public class MyTaskRecyclerViewAdapter extends RecyclerView.Adapter<MyTaskRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+
+        holder.mTitleView.setText(mValues.get(position).getTitle());
+        holder.mBodyView.setText(mValues.get(position).getBody());
+        holder.mStateView.setText(mValues.get(position).getState());
+
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
-                }
+
+                Context context = v.getContext();
+               Log.i(TAG, "it was clicked!");
+               Log.i(TAG, holder.mItem.getTitle());
+//               mListener.onTaskClick(holder.mItem);
+
+        Intent goToTaskDetail = new Intent(context, taskDetail.class);
+        goToTaskDetail.putExtra("title", holder.mItem.getTitle());
+        goToTaskDetail.putExtra("body", holder.mItem.getBody());
+        goToTaskDetail.putExtra("state", holder.mItem.getState());
+        context.startActivity(goToTaskDetail);
+
             }
         });
     }
@@ -57,22 +74,37 @@ public class MyTaskRecyclerViewAdapter extends RecyclerView.Adapter<MyTaskRecycl
         return mValues.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder{
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public DummyItem mItem;
+        public final TextView mTitleView;
+        public final TextView mBodyView;
+        public final TextView mStateView;
+        public Task mItem;
+
+
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.titleFragment);
-            mContentView = (TextView) view.findViewById(R.id.bodyFragment);
+            mTitleView = (TextView) view.findViewById(R.id.titleRecView);
+            mBodyView = (TextView) view.findViewById(R.id.bodyRecView);
+            mStateView = view.findViewById(R.id.stateRecView);
+
         }
+
+
+
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + mBodyView.getText() + "'";
         }
+
     }
+
+    public interface OnTaskListener {
+        void onTaskClick(Task task);
+    }
+
+
 }
