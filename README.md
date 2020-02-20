@@ -101,8 +101,12 @@ Today, you’ll refactor your homepage to look snazzy, with a RecyclerView full 
 ##### Daily Change Log
 
 * Added fragment to display hardcoded task in the homepage
+* When click on the a task on the RecyclerView, it takes you to task details page where the clicked item is reflected.
 
 ##### New Homepage
 ![new homepage with recycler page ](screenshots/RecyclerHomePage.png){:height="500" width="300"}
+
+##### Task Detail
+![task detail from recycler view ](screenshots/taskDetailFromRecyclerView.png){:height="500" width="300"}
 
 
