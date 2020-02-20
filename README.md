@@ -28,10 +28,10 @@ Today, you’ll start building an Android app that will be a main focus of the s
 ###### Screenshot
 
 ###### Homepage
-![homepage](screenshots/homePage.png){:height="500" width="300"}
+![homepage](screenshots/homePage.png)
 
 ###### Add Task Page
-![add task](screenshots/addTask.png){:height="500" width="300"}
+![add task](screenshots/addTask.png)
 
 ---
 
@@ -63,12 +63,12 @@ Today, you’ll add the ability to send data among different activities in your 
 * Replaced the image with hardcoded task buttons. When one of the buttons is clicked, the app will take you to the task detail's page.
 
 ##### New Homepage
-![new home page](screenshots/newHomePage.png){:height="500" width="300"}
+![new home page](screenshots/newHomePage.png)
 
 
 ##### Task Details Page
 
-![task details page](screenshots/taskDetailPage.png){:height="500" width="300"}
+![task details page](screenshots/taskDetailPage.png)
 
 --- 
 
@@ -104,9 +104,9 @@ Today, you’ll refactor your homepage to look snazzy, with a RecyclerView full 
 * When click on the a task on the RecyclerView, it takes you to task details page where the clicked item is reflected.
 
 ##### New Homepage
-![new homepage with recycler page ](screenshots/RecyclerHomePage.png){:height="500" width="300"}
+![new homepage with recycler page ](screenshots/RecyclerHomePage.png)
 
 ##### Task Detail
-![task detail from recycler view ](screenshots/taskDetailFromRecyclerView.png){:height="500" width="300"}
+![task detail from recycler view ](screenshots/taskDetailFromRecyclerView.png)
 
 
