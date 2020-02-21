@@ -1,9 +1,12 @@
 package com.example.taskmaster;
 
 public class Task {
+
+class Task {
     String title;
     String body;
     String state;
+
 
     public Task(){
 

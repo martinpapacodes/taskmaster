@@ -22,34 +22,24 @@
         android:id="@+id/addATask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="104dp"
         android:text="Add Task"
         app:layout_constraintEnd_toStartOf="@+id/allTasksButton"
-        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/walkDogButton" />
+        app:layout_constraintTop_toBottomOf="@+id/fragment2" />
 
     <Button
         android:id="@+id/allTasksButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="328dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="60dp"
         android:text="All Tasks"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petDogButton" />
-
-    <Button
-        android:id="@+id/walkDogButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="96dp"
-        android:text="Walk Dog"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/fragment2" />
 
     <Button
         android:id="@+id/settingsButton"
@@ -62,35 +52,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/feedDogButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:text="Feed Dog"
-        app:layout_constraintEnd_toStartOf="@+id/petDogButton"
-        app:layout_constraintStart_toEndOf="@+id/walkDogButton"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/petDogButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="24dp"
-        android:text="Pet Dog"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
     <TextView
         android:id="@+id/usernameTitle"
         android:layout_width="176dp"
         android:layout_height="22dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.example.taskmaster.TaskFragment"
+        android:layout_width="417dp"
+        android:layout_height="316dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
