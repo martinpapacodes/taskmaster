@@ -1,10 +1,16 @@
 package com.example.taskmaster;
 
-class Task {
+public class Task {
 
+class Task {
     String title;
     String body;
     String state;
+
+
+    public Task(){
+
+    }
 
     public Task(String title, String body, String state) {
         this.title = title;
