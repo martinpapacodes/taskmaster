@@ -32,9 +32,4 @@ public class taskDetail extends AppCompatActivity {
 
     }
 
-//    @Override
-//    public void onTaskClick(int position) {
-//        Intent i = new Intent(this,)
-//
-//    }
 }

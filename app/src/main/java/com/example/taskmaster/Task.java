@@ -1,11 +1,22 @@
 package com.example.taskmaster;
 
-class Task {
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity
+public class Task {
+
+    @PrimaryKey(autoGenerate = true)
+    public long id;
 
     String title;
     String body;
     String state;
+    @Ignore
+    public Task() {
 
+    }
     public Task(String title, String body, String state) {
         this.title = title;
         this.body = body;
