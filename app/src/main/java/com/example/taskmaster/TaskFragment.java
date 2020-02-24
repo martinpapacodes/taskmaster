@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,23 +68,24 @@ public class TaskFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_task_list, container, false);
 
         // Set the adapter
-        if (view instanceof RecyclerView) {
-            Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
-            if (mColumnCount <= 1) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-            }
+//        if (view instanceof RecyclerView) {
+//            Context context = view.getContext();
+//            RecyclerView recyclerView = (RecyclerView) view;
+//            if (mColumnCount <= 1) {
+//                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+//            } else {
+//                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
+//            }
+//
+//            AppDatabase db = Room.databaseBuilder(context, AppDatabase.class, "tasks")
+//                    .allowMainThreadQueries().build();
+//
+//            List<Task> listOfTask = db.taskDao().getAllTasks();
+//
+//
+//            recyclerView.setAdapter(new MyTaskRecyclerViewAdapter(listOfTask, null));
 
-            List<Task> listOfTask = new ArrayList<>();
-            listOfTask.add(new Task("Feed Dog", "Feed Biggie around 4pm", "Assigned"));
-            listOfTask.add(new Task("Walk Dog", "Walk Biggie to the dog park", "Completed"));
-            listOfTask.add(new Task("Pet Dog", "Pet Biggie every time you see him", "In-Progress"));
-
-            recyclerView.setAdapter(new MyTaskRecyclerViewAdapter(listOfTask, null));
-
-        }
+//        }
         return view;
     }
 
