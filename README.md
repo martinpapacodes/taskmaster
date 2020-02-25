@@ -148,6 +148,27 @@ Today, you’ll refactor your model layer to store Task data in a local database
 ##### Task Detail
 ![task detail with room ](screenshots/RoomTaskDetail.png)
 
+--- 
+
+## Lab 33: Polish 
+
+### Problem Domain
+
+Today, your app will add a new activity for all tasks with a Recycler View showing all tasks. These tasks must be clickable. When clicked on, trigger a Toast that displays details about the task.
+
+#### Feature Tasks
+
+* Today, your app will add a new activity for all tasks with a Recycler View showing all tasks. These tasks must be clickable. When clicked on, trigger a Toast that displays details about the task.
+
+##### Daily Change Log
+
+* Added Recycler View in All Task page. Tasks are clickable.
+* Toast is triggered when a task is clicked. The toast shows details of the task.
+
+
+##### Task Detail
+![task detail with room ](screenshots/polishAllTask.png)
+
 
 
 
