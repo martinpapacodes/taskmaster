@@ -166,10 +166,30 @@ Today, your app will add a new activity for all tasks with a Recycler View showi
 * Toast is triggered when a task is clicked. The toast shows details of the task.
 
 
-##### Task Detail
+##### All Task
 ![task detail with room ](screenshots/polishAllTask.png)
 
+---
 
+## Lab: 34 - Amplify and DynamoDB 
 
+### Feature Tasks
 
+* Tasks Are Cloudy
 
+    * Using the amplify add api command, create a Task resource that replicates our existing Task schema. Update all references to the Task data to instead use AWS Amplify to access your data in DynamoDB instead of in Room.
+
+* Add Task Form
+
+    * Modify your Add Task form to save the data entered in as a Task to DynamoDB.
+
+* Homepage
+
+    * Refactor your homepage’s RecyclerView to display all Task entities in DynamoDB.
+
+#### Problem Domain
+
+Today, your app will gain a scalable backend by using AWS Amplify. We’ll continue to work with Amplify to add more cloud functionality for the rest of the course.
+
+      
+##### Daily Change Log

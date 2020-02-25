@@ -17,7 +17,9 @@ import android.view.ViewGroup;
 import com.example.taskmaster.dummy.DummyContent;
 import com.example.taskmaster.dummy.DummyContent.DummyItem;
 
+
 import java.util.ArrayList;
+
 import java.util.List;
 
 /**
@@ -96,6 +98,7 @@ public class TaskFragment extends Fragment {
         } else {
 //            throw new RuntimeException(context.toString()
 //                    + " must implement OnListFragmentInteractionListener");
+
         }
     }
 

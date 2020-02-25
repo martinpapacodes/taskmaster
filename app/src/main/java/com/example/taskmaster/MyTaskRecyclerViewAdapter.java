@@ -1,8 +1,12 @@
 package com.example.taskmaster;
 
+
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,13 +46,16 @@ public class MyTaskRecyclerViewAdapter extends RecyclerView.Adapter<MyTaskRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
+
         holder.mTitleView.setText(mValues.get(position).getTitle());
         holder.mBodyView.setText(mValues.get(position).getBody());
         holder.mStateView.setText(mValues.get(position).getState());
 
+
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Context context = v.getContext();
                Log.i(TAG, "it was clicked!");
                Log.i(TAG, holder.mItem.getTitle());
@@ -75,6 +82,7 @@ public class MyTaskRecyclerViewAdapter extends RecyclerView.Adapter<MyTaskRecycl
         public final TextView mBodyView;
         public final TextView mStateView;
         public Task mItem;
+
 
 
         public ViewHolder(View view) {
