@@ -14,10 +14,13 @@ public class Task {
     String title;
     String body;
     String state;
+  
     @Ignore
     public Task() {
 
+
     }
+
     public Task(String title, String body, String state) {
         this.title = title;
         this.body = body;
