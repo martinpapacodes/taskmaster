@@ -166,7 +166,7 @@ Today, your app will add a new activity for all tasks with a Recycler View showi
 * Toast is triggered when a task is clicked. The toast shows details of the task.
 
 
-##### Task Detail
+##### All Task
 ![task detail with room ](screenshots/polishAllTask.png)
 
 
@@ -204,6 +204,8 @@ Setup
 ##### Task Detail
 ![task detail with room ](screenshots/amplifyHomepage.png)
 
+---
+
 ## Lab: 36 - Cognito 
 
 ### Problem Domain
@@ -231,6 +233,4 @@ Today, your app will allow users to sign up and log in using Cognito.
 ##### Task Detail
 ![task detail with room ](screenshots/cognitoHomepage.png)
 
-
-
-
+---
