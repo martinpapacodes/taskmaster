@@ -169,6 +169,36 @@ Today, your app will add a new activity for all tasks with a Recycler View showi
 ##### All Task
 ![task detail with room ](screenshots/polishAllTask.png)
 
+
+--- 
+
+## Lab: 36 - Cognito 
+
+### Problem Domain
+
+Today, your app will allow users to sign up and log in using Cognito.
+
+#### Feature Tasks
+
+* User Login
+
+    * Add Cognito to your Amplify setup. Add in user login and sign up flows to your application, using Cognito’s pre-built UI as appropriate. Display the logged in user’s username somewhere relevant in your app.
+
+* User Logout
+
+    * Allow users to log out of your application.
+
+##### Daily Change Log
+
+* Cognito is implemented. 
+* User able to login and sign up.
+* Username is displayed once user is logged in./
+* User is able to logout.
+
+
+##### Task Detail
+![task detail with room ](screenshots/polishAllTask.png)
+
 ---
 
 ## Lab: 34 - Amplify and DynamoDB 
@@ -178,6 +208,7 @@ Today, your app will add a new activity for all tasks with a Recycler View showi
 * Tasks Are Cloudy
 
     * Using the amplify add api command, create a Task resource that replicates our existing Task schema. Update all references to the Task data to instead use AWS Amplify to access your data in DynamoDB instead of in Room.
+
 
 * Add Task Form
 
