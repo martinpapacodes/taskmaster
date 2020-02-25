@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 @Entity
 public class Task {
 
+    //Unique Key
     @PrimaryKey(autoGenerate = true)
     public long id;
 
