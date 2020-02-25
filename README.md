@@ -148,7 +148,7 @@ Today, you’ll refactor your model layer to store Task data in a local database
 ##### Task Detail
 ![task detail with room ](screenshots/RoomTaskDetail.png)
 
---- 
+---
 
 ## Lab 33: Polish 
 
@@ -171,6 +171,40 @@ Today, your app will add a new activity for all tasks with a Recycler View showi
 
 
 --- 
+
+## Lab: 34 - Amplify and DynamoDB
+
+### Problem Domain
+
+Today, your app will gain a scalable backend by using AWS Amplify. We’ll continue to work with Amplify to add more cloud functionality for the rest of the course.
+Setup
+
+#### Feature Tasks
+
+* Tasks Are Cloudy
+
+    * Using the amplify add api command, create a Task resource that replicates our existing Task schema. Update all references to the Task data to instead use AWS Amplify to access your data in DynamoDB instead of in Room.
+
+* Add Task Form
+
+    * Modify your Add Task form to save the data entered in as a Task to DynamoDB.
+
+* Homepage
+
+    * Refactor your homepage’s RecyclerView to display all Task entities in DynamoDB.
+
+##### Daily Change Log
+
+* Added Amplify Api
+* Replicated Task schema using Task resource
+* Updated all references to the Task data
+* Modified Add Task Form to save data entered into DynamoDB
+* Refactored homepage's RecyclerView to display all task in DynamoDB.
+
+##### Task Detail
+![task detail with room ](screenshots/amplifyHomepage.png)
+
+---
 
 ## Lab: 36 - Cognito 
 
@@ -197,30 +231,6 @@ Today, your app will allow users to sign up and log in using Cognito.
 
 
 ##### Task Detail
-![task detail with room ](screenshots/polishAllTask.png)
+![task detail with room ](screenshots/cognitoHomepage.png)
 
 ---
-
-## Lab: 34 - Amplify and DynamoDB 
-
-### Feature Tasks
-
-* Tasks Are Cloudy
-
-    * Using the amplify add api command, create a Task resource that replicates our existing Task schema. Update all references to the Task data to instead use AWS Amplify to access your data in DynamoDB instead of in Room.
-
-
-* Add Task Form
-
-    * Modify your Add Task form to save the data entered in as a Task to DynamoDB.
-
-* Homepage
-
-    * Refactor your homepage’s RecyclerView to display all Task entities in DynamoDB.
-
-#### Problem Domain
-
-Today, your app will gain a scalable backend by using AWS Amplify. We’ll continue to work with Amplify to add more cloud functionality for the rest of the course.
-
-      
-##### Daily Change Log
