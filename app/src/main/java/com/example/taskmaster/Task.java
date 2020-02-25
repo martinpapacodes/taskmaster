@@ -10,7 +10,6 @@ public class Task {
     @PrimaryKey(autoGenerate = true)
     public long id;
 
-class Task {
     String title;
     String body;
     String state;
