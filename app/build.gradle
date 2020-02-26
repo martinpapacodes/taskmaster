@@ -3,6 +3,10 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
     defaultConfig {
         applicationId "com.example.taskmaster"
         minSdkVersion 21
@@ -25,6 +29,9 @@ dependencies {
 
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    implementation 'com.amplifyframework:core:0.9.1'
+    implementation 'com.amplifyframework:aws-api:0.9.1'
 
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
