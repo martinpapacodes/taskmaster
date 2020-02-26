@@ -234,3 +234,30 @@ Today, your app will allow users to sign up and log in using Cognito.
 ![task detail with room ](screenshots/cognitoHomepage.png)
 
 ---
+
+## Lab 37: S3 Uploads
+
+### Problem Domain
+
+Today, your app will allow users to upload files related to tasks, like screenshots or log files.
+#### Feature Tasks
+
+* Uploads
+
+    * On the “Add a Task” activity, allow users to optionally select a file to attach to that task. If a user attaches a file to a task, that file should be uploaded to S3, and associated with that task.
+
+* Displaying Files
+
+    * On the Task detail activity, if there is a file that is an image associated with a particular Task, that image should be displayed within that activity. (If the file is any other type, you should display a link to it.)
+
+##### Daily Change Log
+
+* Users are able to select file to attach to task then uploaded to S3.
+* If an image exist associated with a file, image is displayed in the task detail. If not, a link is displayed.
+
+
+##### Task Detail
+//FIll out later
+---
+
+
