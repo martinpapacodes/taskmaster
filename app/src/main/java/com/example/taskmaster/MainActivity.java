@@ -9,6 +9,9 @@ import androidx.room.Room;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
@@ -16,13 +19,24 @@ import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.amazonaws.amplify.generated.graphql.ListTasksQuery;
+import com.amazonaws.mobile.config.AWSConfiguration;
+import com.amazonaws.mobileconnectors.appsync.AWSAppSyncClient;
+import com.amazonaws.mobileconnectors.appsync.fetcher.AppSyncResponseFetchers;
+import com.apollographql.apollo.GraphQLCall;
+import com.apollographql.apollo.api.Response;
+import com.apollographql.apollo.exception.ApolloException;
+
+import java.util.LinkedList;
 import java.util.List;
+
+import javax.annotation.Nonnull;
 
 public class MainActivity extends AppCompatActivity implements MyTaskRecyclerViewAdapter.OnTaskListener {
 
     AppDatabase db;
 
-
+    private AWSAppSyncClient mAWSAppSyncClient;
     List<Task> listOfTasks;
     MyTaskRecyclerViewAdapter adapter;
     static String TAG = "mnf.main";
@@ -33,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements MyTaskRecyclerVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAWSAppSyncClient = AWSAppSyncClient.builder()
+                .context(getApplicationContext())
+                .awsConfiguration(new AWSConfiguration(getApplicationContext()))
+                .build();
 
         Button addATaskButton = findViewById(R.id.addATask);
         addATaskButton.setOnClickListener(new View.OnClickListener() {
@@ -64,9 +82,9 @@ public class MainActivity extends AppCompatActivity implements MyTaskRecyclerVie
             }
         });
 
-        db =  Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "tasks")
-                .allowMainThreadQueries().build();
-        listOfTasks = db.taskDao().getAllTasks();
+//        db =  Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "tasks")
+//                .allowMainThreadQueries().build();
+//        listOfTasks = db.taskDao().getAllTasks();
 
         RecyclerView recyclerView = findViewById(R.id.fragment2);
 
@@ -77,8 +95,8 @@ public class MainActivity extends AppCompatActivity implements MyTaskRecyclerVie
         AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "tasks")
                 .allowMainThreadQueries().build();
 
-        listOfTasks =  db.taskDao().getAllTasks();
 
+        listOfTasks = new LinkedList<>();
         adapter = (new MyTaskRecyclerViewAdapter(listOfTasks, null));
         recyclerView.setAdapter(adapter);
 
@@ -98,11 +116,15 @@ public class MainActivity extends AppCompatActivity implements MyTaskRecyclerVie
 
         RecyclerView recyclerView = findViewById(R.id.fragment2);
 
-        db =  Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "tasks")
-                .allowMainThreadQueries().build();
+//        db =  Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "tasks")
+//                .allowMainThreadQueries().build();
+//
+//        listOfTasks = db.taskDao().getAllTasks();
+//        adapter.notifyDataSetChanged();
 
-        listOfTasks = db.taskDao().getAllTasks();
-        adapter.notifyDataSetChanged();
+        runQuery();
+
+
 
 
     }
@@ -114,4 +136,45 @@ public class MainActivity extends AppCompatActivity implements MyTaskRecyclerVie
 
         startActivity(takeMeToTaskDetail);
     }
+
+    public void runQuery(){
+        mAWSAppSyncClient.query(ListTasksQuery.builder().build())
+                .responseFetcher(AppSyncResponseFetchers.CACHE_AND_NETWORK)
+                .enqueue(taskCallback);
+    }
+
+    private GraphQLCall.Callback<ListTasksQuery.Data> taskCallback = new GraphQLCall.Callback<ListTasksQuery.Data>() {
+        @Override
+        public void onResponse(@Nonnull Response<ListTasksQuery.Data> response) {
+            Log.i("Results", response.data().listTasks().items().toString());
+
+
+            listOfTasks.clear();
+
+            for(ListTasksQuery.Item task: response.data().listTasks().items()) {
+                listOfTasks.add(new Task(task.title(), task.body(), task.state()));
+            }
+
+            Handler handlerForMainThread = new Handler(Looper.getMainLooper()) {
+                @Override
+                public void handleMessage(Message inputMessage) {
+                    adapter.notifyDataSetChanged();
+                }
+            };
+
+            handlerForMainThread.obtainMessage().sendToTarget();
+
+
+
+
+
+
+        }
+
+        @Override
+        public void onFailure(@Nonnull ApolloException e) {
+            Log.e("ERROR", e.toString());
+        }
+    };
+
 }

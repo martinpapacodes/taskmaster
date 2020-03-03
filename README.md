@@ -195,14 +195,12 @@ Setup
 
 ##### Daily Change Log
 
-* Added Amplify Api
-* Replicated Task schema using Task resource
-* Updated all references to the Task data
-* Modified Add Task Form to save data entered into DynamoDB
-* Refactored homepage's RecyclerView to display all task in DynamoDB.
+* Modified my app to pull from DynamoDB
+* App is now able to add task and save to DynamoDB
+* Items from DynamoDB is displayed in RecyclerView
 
-##### Task Detail
-![task detail with room ](screenshots/amplifyHomepage.png)
+##### Amplify Home Page
+![Amplify Home Page](screenshots/AmplifyNewHomePage.png)
 
 ---
 

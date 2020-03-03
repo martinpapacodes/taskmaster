@@ -1,5 +1,7 @@
 {
-    "projectName": "taskmaster",
+
+    "projectName": "task-env",
+
     "version": "3.0",
     "frontend": "android",
     "android": {
