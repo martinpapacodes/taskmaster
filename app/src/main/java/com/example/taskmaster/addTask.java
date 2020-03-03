@@ -12,13 +12,30 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.amazonaws.amplify.generated.graphql.CreateTaskMutation;
+import com.amazonaws.mobile.config.AWSConfiguration;
+import com.amazonaws.mobileconnectors.appsync.AWSAppSyncClient;
+import com.apollographql.apollo.GraphQLCall;
+import com.apollographql.apollo.api.Response;
+import com.apollographql.apollo.exception.ApolloException;
+
+import javax.annotation.Nonnull;
+
+import type.CreateTaskInput;
+
 public class addTask extends AppCompatActivity {
 
     AppDatabase db;
+    private AWSAppSyncClient mAWSAppSyncClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
+
+        mAWSAppSyncClient = AWSAppSyncClient.builder()
+                .context(getApplicationContext())
+                .awsConfiguration(new AWSConfiguration(getApplicationContext()))
+                .build();
 
         db =  Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "tasks")
                 .allowMainThreadQueries().build();
@@ -30,8 +47,19 @@ public class addTask extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 EditText taskTitle = findViewById(R.id.taskTitle);
                 EditText taskDescription = findViewById(R.id.taskDescription);
+                CreateTaskInput createTaskInput = CreateTaskInput.builder().
+                        title(taskTitle.getText().toString()).
+                        body(taskDescription.getText().toString()).
+                        state("New").
+                        build();
+
+                mAWSAppSyncClient.mutate(CreateTaskMutation.builder().input(createTaskInput).build())
+                        .enqueue(mutationCallback);
+
+
 
                 TextView submitted = findViewById(R.id.submitted);
 
@@ -46,12 +74,29 @@ public class addTask extends AppCompatActivity {
                 taskTitle.setText("");
                 taskDescription.setText("");
 
-                Intent goBackToMain = new Intent(context, MainActivity.class);
-                context.startActivity(goBackToMain);
 
             }
         });
 
 
+
+
+
+
     }
+
+    private GraphQLCall.Callback<CreateTaskMutation.Data> mutationCallback = new GraphQLCall.Callback<CreateTaskMutation.Data>() {
+        @Override
+        public void onResponse(@Nonnull Response<CreateTaskMutation.Data> response) {
+            Log.i("Results", "Added Todo");
+
+            Intent goBackToMain = new Intent(addTask.this, MainActivity.class);
+            addTask.this.startActivity(goBackToMain);
+        }
+
+        @Override
+        public void onFailure(@Nonnull ApolloException e) {
+            Log.e("Error", e.toString());
+        }
+    };
 }

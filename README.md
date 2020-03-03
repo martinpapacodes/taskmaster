@@ -193,3 +193,10 @@ Today, your app will gain a scalable backend by using AWS Amplify. We’ll conti
 
       
 ##### Daily Change Log
+* Modified my app to pull from DynamoDB
+* App is now able to add task and save to DynamoDB
+* Items from DynamoDB is displayed in RecyclerView
+
+
+##### Amplify Home Page
+![Amplify Home Page](screenshots/AmplifyNewHomePage.png)
