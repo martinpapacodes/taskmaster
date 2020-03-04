@@ -200,3 +200,32 @@ Today, your app will gain a scalable backend by using AWS Amplify. We’ll conti
 
 ##### Amplify Home Page
 ![Amplify Home Page](screenshots/AmplifyNewHomePage.png)
+
+---
+
+## Lab: 36 - Cognito 
+
+### Feature Tasks
+
+* User Login
+
+    * Add Cognito to your Amplify setup. Add in user login and sign up flows to your application, using Cognito’s pre-built UI as appropriate. Display the logged in user’s username somewhere relevant in your app.
+
+* User Logout
+
+    * Allow users to log out of your application.
+    
+#### Problem Domain
+
+Today, your app will allow users to sign up and log in using Cognito.
+      
+##### Daily Change Log
+* Added Cognito to Amplify.
+* User able to login or sign up. Username is displayed in the homepage once the user successfully login.
+* User are able to logout.
+
+
+##### Amplify Home Page
+![Cognito Login Page](screenshots/CognitoLoginPage.png)
+
+
