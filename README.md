@@ -148,7 +148,7 @@ Today, you’ll refactor your model layer to store Task data in a local database
 ##### Task Detail
 ![task detail with room ](screenshots/RoomTaskDetail.png)
 
---- 
+---
 
 ## Lab 33: Polish 
 
@@ -169,11 +169,17 @@ Today, your app will add a new activity for all tasks with a Recycler View showi
 ##### All Task
 ![task detail with room ](screenshots/polishAllTask.png)
 
----
 
-## Lab: 34 - Amplify and DynamoDB 
+--- 
 
-### Feature Tasks
+## Lab: 34 - Amplify and DynamoDB
+
+### Problem Domain
+
+Today, your app will gain a scalable backend by using AWS Amplify. We’ll continue to work with Amplify to add more cloud functionality for the rest of the course.
+Setup
+
+#### Feature Tasks
 
 * Tasks Are Cloudy
 
@@ -187,16 +193,11 @@ Today, your app will add a new activity for all tasks with a Recycler View showi
 
     * Refactor your homepage’s RecyclerView to display all Task entities in DynamoDB.
 
-#### Problem Domain
-
-Today, your app will gain a scalable backend by using AWS Amplify. We’ll continue to work with Amplify to add more cloud functionality for the rest of the course.
-
-      
 ##### Daily Change Log
+
 * Modified my app to pull from DynamoDB
 * App is now able to add task and save to DynamoDB
 * Items from DynamoDB is displayed in RecyclerView
-
 
 ##### Amplify Home Page
 ![Amplify Home Page](screenshots/AmplifyNewHomePage.png)
@@ -205,7 +206,11 @@ Today, your app will gain a scalable backend by using AWS Amplify. We’ll conti
 
 ## Lab: 36 - Cognito 
 
-### Feature Tasks
+### Problem Domain
+
+Today, your app will allow users to sign up and log in using Cognito.
+
+#### Feature Tasks
 
 * User Login
 
@@ -214,10 +219,6 @@ Today, your app will gain a scalable backend by using AWS Amplify. We’ll conti
 * User Logout
 
     * Allow users to log out of your application.
-    
-#### Problem Domain
-
-Today, your app will allow users to sign up and log in using Cognito.
       
 ##### Daily Change Log
 * Added Cognito to Amplify.
@@ -227,5 +228,33 @@ Today, your app will allow users to sign up and log in using Cognito.
 
 ##### Amplify Home Page
 ![Cognito Login Page](screenshots/CognitoLoginPage.png)
+
+---
+
+## Lab 37: S3 Uploads
+
+### Problem Domain
+
+Today, your app will allow users to upload files related to tasks, like screenshots or log files.
+#### Feature Tasks
+
+* Uploads
+
+    * On the “Add a Task” activity, allow users to optionally select a file to attach to that task. If a user attaches a file to a task, that file should be uploaded to S3, and associated with that task.
+
+* Displaying Files
+
+    * On the Task detail activity, if there is a file that is an image associated with a particular Task, that image should be displayed within that activity. (If the file is any other type, you should display a link to it.)
+
+##### Daily Change Log
+
+* Users are able to select file to attach to task then uploaded to S3.
+* If an image exist associated with a file, image is displayed in the task detail. If not, a link is displayed.
+
+
+##### Task Detail
+//FIll out later
+---
+
 
 
