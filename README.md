@@ -219,17 +219,15 @@ Today, your app will allow users to sign up and log in using Cognito.
 * User Logout
 
     * Allow users to log out of your application.
-
+      
 ##### Daily Change Log
-
-* Cognito is implemented. 
-* User able to login and sign up.
-* Username is displayed once user is logged in./
-* User is able to logout.
+* Added Cognito to Amplify.
+* User able to login or sign up. Username is displayed in the homepage once the user successfully login.
+* User are able to logout.
 
 
-##### Task Detail
-![task detail with room ](screenshots/cognitoHomepage.png)
+##### Amplify Home Page
+![Cognito Login Page](screenshots/CognitoLoginPage.png)
 
 ---
 
@@ -257,5 +255,6 @@ Today, your app will allow users to upload files related to tasks, like screensh
 ##### Task Detail
 //FIll out later
 ---
+
 
 

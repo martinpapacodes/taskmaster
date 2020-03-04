@@ -10,7 +10,7 @@ android {
     }
     defaultConfig {
         applicationId "com.example.taskmaster"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -27,6 +27,9 @@ android {
 dependencies {
 
     def room_version = "2.2.4"
+    implementation 'com.amazonaws:aws-android-sdk-mobile-client:2.15.+'
+    implementation 'com.amazonaws:aws-android-sdk-auth-userpools:2.15.+'
+    implementation 'com.amazonaws:aws-android-sdk-auth-ui:2.15.+'
 
     implementation 'com.amazonaws:aws-android-sdk-core:2.15.+'
 

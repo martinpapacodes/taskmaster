@@ -10,6 +10,11 @@
             "StackName": "amplify-task-env-taskenv-102830",
             "StackId": "arn:aws:cloudformation:us-west-2:635778724333:stack/amplify-task-env-taskenv-102830/c9847350-5d7c-11ea-b9b7-0a9cd3354c10",
             "AmplifyAppId": "d1hz79dzu69dxr"
+        },
+        "categories": {
+            "auth": {
+                "taskenv8c8b46bd": {}
+            }
         }
     }
 }
